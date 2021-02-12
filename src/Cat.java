@@ -7,6 +7,8 @@ public class Cat
     private double minWeight;
     private double maxWeight;
 
+    private double eatable;
+
     public Cat()
     {
         weight = 1500.0 + 3000.0 * Math.random();
@@ -32,6 +34,12 @@ public class Cat
         weight = weight + amount;
     }
 
+    public void pee(Double amount)
+    {
+        weight = weight - amount;
+        System.out.println("пись-пись");
+    }
+
     public Double getWeight()
     {
         return weight;
@@ -51,5 +59,9 @@ public class Cat
         else {
             return "Playing";
         }
+    }
+    public Double getEatable(){
+        eatable = weight - originWeight;
+        return eatable;
     }
 }
