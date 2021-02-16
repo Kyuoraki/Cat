@@ -1,7 +1,9 @@
 
 public class Cat {
     private static int count;
-    private static String status;
+    public static final int EYE_COUNT = 2;
+    public static final double MIN_WEIGHT = 1000;
+    public static final double MAX_WEIGHT = 9000;
 
     private double originWeight;
     private double weight;
@@ -10,8 +12,10 @@ public class Cat {
     private double maxWeight;
 
     private double eatable;
+    private String name;
 
-    public Cat() {
+    public Cat(String name) {
+        this.name = name;
         weight = 1500.0 + 3000.0 * Math.random();
         originWeight = weight;
         minWeight = 1000.0;
@@ -27,6 +31,7 @@ public class Cat {
             System.out.println("Meow");
         }
     }
+
     public void feed(Double amount) {
         if (weight > maxWeight || weight < minWeight) {
             System.out.println("i can't eat");
@@ -34,6 +39,7 @@ public class Cat {
             weight = weight + amount;
         }
     }
+
     public void drink(Double amount) {
         if (weight > maxWeight || weight < minWeight) {
             System.out.println("i can't drink");
@@ -41,6 +47,7 @@ public class Cat {
             weight = weight + amount;
         }
     }
+
     public void pee(Double amount) {
         if (weight > maxWeight || weight < minWeight) {
             System.out.println("i can't pee-pee");
@@ -49,9 +56,11 @@ public class Cat {
             System.out.println("пись-пись");
         }
     }
+
     public Double getWeight() {
         return weight;
     }
+
     public String getStatus() {
         if (weight < minWeight) {
             count--;
@@ -65,16 +74,23 @@ public class Cat {
             return "Playing";
         }
     }
+
     public static int getCount() {
         return count;
     }
+
+    public void  setCatColor(Color catColor)
+    {
+        System.out.println(catColor.toString());
+    }
+
     public Double getEatable() {
         if (weight > maxWeight || weight < minWeight) {
-            System.out.println(" don't matter at all!");
+            System.out.println(name + " don't matter at all!");
+            return null;
         } else {
             eatable = weight - originWeight;
-//            System.out.println(eatable);
+            return eatable;
         }
-        return eatable;
     }
 }
