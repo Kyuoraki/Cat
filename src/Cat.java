@@ -23,6 +23,12 @@ public class Cat {
         count++;
 
     }
+
+    public Cat(double weight)
+    {
+        this.weight = weight;
+    }
+
     public void meow() {
         if (weight > maxWeight || weight < minWeight) {
             System.out.println("i can't meow");
