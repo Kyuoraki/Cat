@@ -14,8 +14,9 @@ public class Cat {
     public String color;
 
 
-    public Cat(String name) {
+    public Cat(String name, double weight) {
         this.name = name;
+        this.weight = weight;
         weight = 1500.0 + 3000.0 * Math.random();
         originWeight = weight;
         minWeight = 1000.0;
@@ -24,9 +25,24 @@ public class Cat {
 
     }
 
-    public Cat(double weight)
-    {
+    public Cat(Cat cat) {
+        this(cat.name, cat.weight);
+    }
+
+    public void setWeight(double weight) {
         this.weight = weight;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setColor(Color color) {
@@ -36,7 +52,6 @@ public class Cat {
     public String getColor() {
         return color;
     }
-
 
     public void meow() {
         if (weight > maxWeight || weight < minWeight) {
@@ -72,10 +87,6 @@ public class Cat {
         }
     }
 
-    public Double getWeight() {
-        return weight;
-    }
-
     public String getStatus() {
         if (weight < minWeight) {
             count--;
@@ -94,8 +105,7 @@ public class Cat {
         return count;
     }
 
-    public void  setCatColor(Color catColor)
-    {
+    public void  setCatColor(Color catColor) {
         System.out.println(catColor.toString());
     }
 
