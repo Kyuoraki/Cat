@@ -1,17 +1,16 @@
 
 public class Loader {
-    private static Cat getKitten(Double weight)
-    {
-        Cat x = new Cat(1100.00);
-        return x;
-    }
     public static void main(String[] args) {
-        Cat Oleg = getKitten(0.00);
-        Cat Kurlik = getKitten(0.00);
-        Cat Vadik = getKitten(0.00);
+        Cat Oleg = new Cat(0.0);
+        Cat Kurlik = new Cat(0.0);
+        Cat Vadik = new Cat(0.0);
 
-        System.out.println("Oleg " + Oleg.getWeight());
-        System.out.println("Kurlik " + Kurlik.getWeight());
-        System.out.println("Vadik " + Vadik.getWeight());
+        Oleg.setColor(Color.BLACK);
+        Kurlik.setColor(Color.GREY);
+        Vadik.setColor(Color.TRIPLE_COLOR);
+
+        System.out.println("Oleg: " + Oleg.getColor());
+        System.out.println("Kurlik: " + Kurlik.getColor());
+        System.out.println("Vadik: " + Vadik.getColor());
     }
 }

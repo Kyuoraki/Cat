@@ -7,12 +7,12 @@ public class Cat {
 
     private double originWeight;
     private double weight;
-
     private double minWeight;
     private double maxWeight;
-
     private double eatable;
     private String name;
+    public String color;
+
 
     public Cat(String name) {
         this.name = name;
@@ -28,6 +28,15 @@ public class Cat {
     {
         this.weight = weight;
     }
+
+    public void setColor(Color color) {
+        this.color = String.valueOf(color);
+    }
+
+    public String getColor() {
+        return color;
+    }
+
 
     public void meow() {
         if (weight > maxWeight || weight < minWeight) {
